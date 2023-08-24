@@ -1,0 +1,33 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    /* justify-self: center; */
+    align-items: center;
+}
+
+header{
+    font-size: 2rem;
+    font-weight: bolder;
+    text-align: left;
+}
+
+.list{
+    width: 500px;
+    height: 500px;
+    /* border: 1px solid black; */
+}
+
+.input-part{
+    margin: 10px 0;
+}
+
+#tditem{
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.add-btn{
+    border-radius:5px ;
+    margin-left: 20px;
+    padding: 5px;
+}
