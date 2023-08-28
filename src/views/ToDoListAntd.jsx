@@ -1,29 +1,32 @@
 import React, { useRef, useState } from "react";
 import ToDoItem from "./ToDoItem";
 import './ToDoList.css';
+import {Button,Input} from 'antd';
+import { FormOutlined } from '@ant-design/icons';
 
 const TodoList = ()=>{
     const [resData,setResData] = useState(['起床','吃饭','学习react']);
+    const [inputValue,setInputValue] = useState('');
 
     const ref = useRef(null);
 
     const add = ()=>{
-        const newTodo = ref.current.value;
-        if(newTodo){
-            //不输入不添加
-            setResData(resData=>[...resData,newTodo]);
-            ref.current.value = '';
+        if(inputValue){
+            setResData(resData=>[...resData,inputValue]);
+            setInputValue('')
         }
     }
 
+    const getInput = (e)=>{
+        setInputValue(e.target.value);
+    }
 
     return (
         <div className="main">
             <header>待办</header>
             <div className="input-part">
-            
-                <input ref={ref} type="text" name="todoitem"  />
-                <button className="add-btn" onClick={add} >添加</button>
+                <Input defaultValue={inputValue} value={inputValue} ref={ref} id="tditem" prefix={<FormOutlined />} onChange={getInput} />
+                <Button className="add-btn" onClick={add} >添加</Button>
             </div>
             
             <div className="list">
