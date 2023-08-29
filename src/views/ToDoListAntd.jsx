@@ -4,7 +4,7 @@ import './ToDoList.css';
 import {Button,Input} from 'antd';
 import { FormOutlined } from '@ant-design/icons';
 
-const TodoList = ()=>{
+const TodoListAntd = ()=>{
     const [resData,setResData] = useState(['起床','吃饭','学习react']);
     const [inputValue,setInputValue] = useState('');
 
@@ -37,4 +37,4 @@ const TodoList = ()=>{
     );
 }
 
-export default TodoList;
+export default TodoListAntd;
